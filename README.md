@@ -1,6 +1,8 @@
 Crypto
 ===============
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c03efea0eb1e46e396d9586697a1aef0)](https://www.codacy.com/app/universum-studios/android_crypto?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=universum-studios/android_crypto&amp;utm_campaign=Badge_Grade)
+
 ## Download ##
 
 Download the latest **[release](https://github.com/universum-studios/android_crypto/releases "Latest Releases page")** or **add as dependency** in your project via:
