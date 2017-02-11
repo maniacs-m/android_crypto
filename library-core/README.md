@@ -1,4 +1,4 @@
-Intents-Core
+Crypto-Core
 ===============
 
 ## Download ##

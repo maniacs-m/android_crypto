@@ -18,24 +18,20 @@
  */
 package universum.studios.android.crypto;
 
-import android.support.annotation.NonNull;
-
 /**
- * Decrypto defines an interface for implementations that may be used to provide <b>one-side</b>
- * cryptographic operation: <b>decryption</b> of a desired data that are encrypted.
- *
  * @author Martin Albedinsky
- * @see Encrypto
  */
-public interface Decrypto {
+public final class Cryptography {
 
 	/**
-	 * Performs decryption operation for the specified <var>data</var>.
-	 *
-	 * @param data The data to be decrypted.
-	 * @return Decrypted data.
-	 * @throws CryptographyException If the decryption operation has failed.
+	 * Name of the default charset used for cryptographic operations (encryption, decryption) when
+	 * obtaining {@link Byte byte[]} data form a {@link String} value via {@link String#getBytes(String)}.
 	 */
-	@NonNull
-	byte[] decrypt(@NonNull byte[] data) throws CryptographyException;
+	public static final String CHARSET_NAME = "UTF-8";
+
+	/**
+	 */
+	private Cryptography() {
+		// Creation of instances of this class is not publicly allowed.
+	}
 }

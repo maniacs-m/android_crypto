@@ -25,7 +25,7 @@ import android.support.annotation.NonNull;
  *
  * @author Martin Albedinsky
  */
-public final class CryptographicException extends RuntimeException {
+public final class CryptographyException extends RuntimeException {
 
 	/**
 	 * Interface ===================================================================================
@@ -38,7 +38,7 @@ public final class CryptographicException extends RuntimeException {
 	/**
 	 * Log TAG.
 	 */
-	// private static final String TAG = "CryptographicException";
+	// private static final String TAG = "CryptographyException";
 
 	/**
 	 * Static members ==============================================================================
@@ -53,22 +53,22 @@ public final class CryptographicException extends RuntimeException {
 	 */
 
 	/**
-	 * Creates a new instance of CryptographicException with the specified <var>cause</var>.
+	 * Creates a new instance of CryptographyException with the specified <var>cause</var>.
 	 *
-	 * @param cause The cause due to which is the cryptographic exception thrown.
-	 * @see #CryptographicException(String, Throwable)
+	 * @param cause The cause due to which is the cryptography exception thrown.
+	 * @see #CryptographyException(String, Throwable)
 	 */
-	public CryptographicException(@NonNull Throwable cause) {
+	public CryptographyException(@NonNull Throwable cause) {
 		super(cause);
 	}
 
 	/**
-	 * Creates a new instance of CryptographicException with the specified <var>name</var> and <var>cause</var>.
+	 * Creates a new instance of CryptographyException with the specified <var>name</var> and <var>cause</var>.
 	 *
 	 * @param name  The name for the new exception.
-	 * @param cause The cause due to which is the cryptographic exception thrown.
+	 * @param cause The cause due to which is the cryptography exception thrown.
 	 */
-	public CryptographicException(@NonNull String name, @NonNull Throwable cause) {
+	public CryptographyException(@NonNull String name, @NonNull Throwable cause) {
 		super(name, cause);
 	}
 

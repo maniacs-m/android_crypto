@@ -26,3 +26,4 @@ as usually.
 > Following modules are available in the [latest](https://github.com/universum-studios/android_crypto/releases "Latest Releases page") release.
 
 - **[Core](https://github.com/universum-studios/android_crypto/tree/master/library-core)**
+- **[Util](https://github.com/universum-studios/android_crypto/tree/master/library-util)**

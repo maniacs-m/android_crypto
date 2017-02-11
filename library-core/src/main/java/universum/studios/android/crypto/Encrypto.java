@@ -34,8 +34,8 @@ public interface Encrypto {
 	 *
 	 * @param data The data to be encrypted.
 	 * @return Encrypted data.
-	 * @throws CryptographicException If the encryption operation has failed.
+	 * @throws CryptographyException If the encryption operation has failed.
 	 */
 	@NonNull
-	byte[] encrypt(@NonNull byte[] data) throws CryptographicException;
+	byte[] encrypt(@NonNull byte[] data) throws CryptographyException;
 }
