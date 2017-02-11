@@ -18,14 +18,24 @@
  */
 package universum.studios.android.crypto;
 
+import android.support.annotation.NonNull;
+
 /**
- * Crypto defines an interface for implementations that may be used to provide <b>two-side</b>
- * cryptographic operations: <b>encryption</b> and <b>decryption</b> of a desired data.
+ * Encrypto defines an interface for implementations that may be used to provide <b>one-side</b>
+ * cryptographic operation: <b>encryption</b> of a desired data that are decrypted.
  *
  * @author Martin Albedinsky
- *
  * @see Encrypto
- * @see Decrypto
  */
-public interface Crypto extends Decrypto, Encrypto {
+public interface Encrypto {
+
+	/**
+	 * Performs encryption operation for the specified <var>data</var>.
+	 *
+	 * @param data The data to be encrypted.
+	 * @return Encrypted data.
+	 * @throws CryptographicException If the encryption operation has failed.
+	 */
+	@NonNull
+	byte[] encrypt(@NonNull byte[] data) throws CryptographicException;
 }

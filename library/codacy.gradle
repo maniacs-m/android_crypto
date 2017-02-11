@@ -16,9 +16,32 @@
  * See the License for the specific language governing permissions and limitations under the License.
  * =================================================================================================
  */
+repositories {
+    maven { url "https://jitpack.io" }
+    maven { url "http://dl.bintray.com/typesafe/maven-releases" }
+}
+
+configurations { codacy }
+
+dependencies {
+    codacy 'com.github.codacy:codacy-coverage-reporter:-SNAPSHOT'
+}
+
 /**
- * Provides tools that may be used to support cryptographic operations in an Android application.
- *
- * @author Martin Albedinsky
+ * Task that uploads code coverage up to the Codacy cloud.
  */
-package universum.studios.android.crypto;
+task uploadCoverageToCodacy(type: JavaExec) {
+    def Properties tokens = new Properties();
+    tokens.load(new FileInputStream(file(project.property('codacy.tokens'))))
+    main = "com.codacy.CodacyCoverageReporter"
+    classpath = configurations.codacy
+    args = [
+            "-l",
+            "Java",
+            "-r",
+            "${buildDir}/reports/coverage/debug/report.xml",
+            "--projectToken",
+            tokens[project.property('codacy.project')]
+    ]
+    dependsOn 'createDebugCoverageReport'
+}

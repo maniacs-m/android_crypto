@@ -7,7 +7,7 @@ Download the latest **[release](https://github.com/universum-studios/android_cry
 
 ### Gradle ###
 
-    coming soon
+    compile 'universum.studios.android:crypto:0.1.0@aar'
 
 ## Compatibility ##
 
