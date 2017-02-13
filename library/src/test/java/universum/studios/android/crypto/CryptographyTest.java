@@ -16,11 +16,20 @@
  * See the License for the specific language governing permissions and limitations under the License.
  * =================================================================================================
  */
-// Add ARTIFACTS tasks.
-apply from: '../publish/artifacts.gradle'
+package universum.studios.android.crypto;
 
-// Apply MAVEN publishing script.
-apply from: '../publish/maven.gradle'
+import org.junit.Test;
 
-// Apply BINTRAY publishing script.
-apply from: '../publish/bintray.gradle'
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
+
+public final class CryptographyTest {
+
+	@SuppressWarnings("unused")
+	private static final String TAG = "CryptographyTest";
+
+	@Test
+	public void testCharsetName() {
+		assertThat(Cryptography.CHARSET_NAME, is("UTF-8"));
+	}
+}

@@ -20,7 +20,6 @@ package universum.studios.android.crypto.util;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
 
 import java.io.UnsupportedEncodingException;
 
@@ -63,7 +62,7 @@ public final class CryptographyUtils {
 	 */
 	@Nullable
 	public static String encrypt(@Nullable String value, @NonNull Encrypto encrypto) {
-		if (TextUtils.isEmpty(value)) {
+		if (value == null || value.length() == 0) {
 			return value;
 		}
 		try {
@@ -93,7 +92,7 @@ public final class CryptographyUtils {
 	 */
 	@Nullable
 	public static String decrypt(@Nullable String value, @NonNull Decrypto decrypto) {
-		if (TextUtils.isEmpty(value)) {
+		if (value == null || value.length() == 0) {
 			return value;
 		}
 		try {

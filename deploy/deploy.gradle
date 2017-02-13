@@ -16,39 +16,11 @@
  * See the License for the specific language governing permissions and limitations under the License.
  * =================================================================================================
  */
-repositories {
-    maven { url "https://jitpack.io" }
-    maven { url "http://dl.bintray.com/typesafe/maven-releases" }
-}
+// Add ARTIFACTS tasks.
+apply from: '../deploy/artifacts.gradle'
 
-configurations { codacy }
+// Apply MAVEN deploy script.
+apply from: '../deploy/maven.gradle'
 
-dependencies {
-    codacy 'com.github.codacy:codacy-coverage-reporter:-SNAPSHOT'
-}
-
-/**
- * Task that uploads code coverage up to the Codacy cloud.
- */
-task uploadCoverageToCodacy(type: JavaExec) {
-    final String token
-    final File tokensFile = file(project.property('codacy.tokens'))
-    if (tokensFile.exists()) {
-        def Properties tokens = new Properties();
-        tokens.load(new FileInputStream(tokensFile))
-        token = tokens[project.property('codacy.project')]
-    } else {
-        token = System.getenv('CODACY_PROJECT_TOKEN')
-    }
-    main = "com.codacy.CodacyCoverageReporter"
-    classpath = configurations.codacy
-    args = [
-            "-l",
-            "Java",
-            "-r",
-            "${buildDir}/reports/coverage/debug/report.xml",
-            "--projectToken",
-            token
-    ]
-    dependsOn 'createDebugCoverageReport'
-}
+// Apply BINTRAY deploy script.
+apply from: '../deploy/bintray.gradle'
