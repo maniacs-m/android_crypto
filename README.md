@@ -6,7 +6,7 @@ Crypto
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/c03efea0eb1e46e396d9586697a1aef0)](https://www.codacy.com/app/universum-studios/android_crypto?utm_source=github.com&utm_medium=referral&utm_content=universum-studios/android_crypto&utm_campaign=Badge_Coverage)
 
 ## Download ##
-[![Bintray Badge](https://api.bintray.com/packages/universum-studios/android/universum.studios.android%3Agraphics/images/download.svg)](https://bintray.com/universum-studios/android/universum.studios.android%3Agraphics/_latestVersion)
+[![Bintray Badge](https://api.bintray.com/packages/universum-studios/android/universum.studios.android%3Acrypto/images/download.svg)](https://bintray.com/universum-studios/android/universum.studios.android%3Acrypto/_latestVersion)
 
 Download the latest **[release](https://github.com/universum-studios/android_crypto/releases "Latest Releases page")** or **add as dependency** in your project via:
 
