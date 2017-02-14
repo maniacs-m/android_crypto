@@ -54,7 +54,7 @@ android {
  * Library dependencies ============================================================================
  */
 repositories {
-    mavenLocal()
+    maven { url = '../artifacts/' }
 }
 
 dependencies {

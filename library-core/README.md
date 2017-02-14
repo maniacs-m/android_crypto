@@ -6,4 +6,4 @@ Crypto-Core
 
 ### Gradle ###
 
-    compile 'universum.studios.android:crypto-core:${DESIRED_VERSION}@aar'
+    compile "universum.studios.android:crypto-core:${DESIRED_VERSION}@aar"

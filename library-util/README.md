@@ -6,7 +6,7 @@ Crypto-Util
 
 ### Gradle ###
 
-    compile 'universum.studios.android:crypto-util:${DESIRED_VERSION}@aar'
+    compile "universum.studios.android:crypto-util:${DESIRED_VERSION}@aar"
 
 _depends on:_
 [crypto-core](https://github.com/universum-studios/android_crypto/tree/master/library-core),
