@@ -82,8 +82,8 @@ task updateLocalArtifacts() {
     final String mavenLocalPath = String.valueOf(project.property('maven.url.local'))
     final String artifactsId = String.valueOf(project.property('maven.pom.artifactId'))
     final String artifactsVersion = String.valueOf(project.property('maven.pom.version'))
-    final String artifactsSourceDir = mavenLocalPath + '/universum/studios/android/' + artifactsId + '/' + artifactsVersion
-    final String artifactsDestinationDir = '../artifacts/universum/studios/android/' + artifactsId + '/' + artifactsVersion
+    final String artifactsSourceDir = mavenLocalPath + '\\universum\\studios\\android\\' + artifactsId + '\\' + artifactsVersion
+    final String artifactsDestinationDir = '..\\artifacts\\universum\\studios\\android\\' + artifactsId + '\\' + artifactsVersion
     delete artifactsDestinationDir
     copy {
         from artifactsSourceDir
