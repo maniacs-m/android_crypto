@@ -28,10 +28,6 @@ import android.support.annotation.NonNull;
 public final class CryptographyException extends RuntimeException {
 
 	/**
-	 * Interface ===================================================================================
-	 */
-
-	/**
 	 * Constants ===================================================================================
 	 */
 
@@ -39,6 +35,10 @@ public final class CryptographyException extends RuntimeException {
 	 * Log TAG.
 	 */
 	// private static final String TAG = "CryptographyException";
+
+	/**
+	 * Interface ===================================================================================
+	 */
 
 	/**
 	 * Static members ==============================================================================
