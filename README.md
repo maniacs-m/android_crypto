@@ -1,7 +1,7 @@
 Crypto
 ===============
 
-[![Build Status](https://travis-ci.org/universum-studios/android_crypto.svg?branch=master)](https://travis-ci.org/universum-studios/android_crypto)
+[![Build Status](https://travis-ci.org/universum-studios/android_crypto.svg?branch=develop)](https://travis-ci.org/universum-studios/android_crypto)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c03efea0eb1e46e396d9586697a1aef0)](https://www.codacy.com/app/universum-studios/android_crypto?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=universum-studios/android_crypto&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/c03efea0eb1e46e396d9586697a1aef0)](https://www.codacy.com/app/universum-studios/android_crypto?utm_source=github.com&utm_medium=referral&utm_content=universum-studios/android_crypto&utm_campaign=Badge_Coverage)
 
