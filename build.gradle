@@ -72,3 +72,13 @@ task deployToBintray() {
         }
     }
 }
+
+/**
+ * Task that deploys (pushes) current version of the website along with reports for Android tests
+ * and coverage up into the library's repository on the 'gh-pages' branch.
+ */
+task deployWebsite(type: Exec, dependsOn: ':library:createDebugCoverageReport') {
+    if (!Boolean.parseBoolean(System.getenv('TRAVIS'))) {
+        commandLine 'sh', 'deploy/deploy-website.sh'
+    }
+}

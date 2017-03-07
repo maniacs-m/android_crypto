@@ -19,8 +19,10 @@
 package universum.studios.android.crypto.util;
 
 import android.support.annotation.NonNull;
+import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import universum.studios.android.crypto.CryptographyException;
 import universum.studios.android.crypto.Decrypto;
@@ -32,6 +34,7 @@ import static org.junit.Assert.assertThat;
 /**
  * @author Martin Albedinsky
  */
+@RunWith(AndroidJUnit4.class)
 public final class CryptographyUtilsTest {
 
 	@SuppressWarnings("unused")
