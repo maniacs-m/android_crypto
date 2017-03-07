@@ -1,14 +1,14 @@
 Crypto
 ===============
 
-Cryptographic tools for the Android platform.
-
-For more information please visit the **[Wiki](https://github.com/universum-studios/android_crypto/wiki)**.
-
 [![Build Status](https://travis-ci.org/universum-studios/android_crypto.svg?branch=master)](https://travis-ci.org/universum-studios/android_crypto)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c03efea0eb1e46e396d9586697a1aef0)](https://www.codacy.com/app/universum-studios/android_crypto?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=universum-studios/android_crypto&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/c03efea0eb1e46e396d9586697a1aef0)](https://www.codacy.com/app/universum-studios/android_crypto?utm_source=github.com&utm_medium=referral&utm_content=universum-studios/android_crypto&utm_campaign=Badge_Coverage)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Crypto-green.svg?style=flat)](https://android-arsenal.com/details/1/5411)
+
+Cryptographic tools for the Android platform.
+
+For more information please visit the **[Wiki](https://github.com/universum-studios/android_crypto/wiki)**.
 
 ## Download ##
 [![Bintray Badge](https://api.bintray.com/packages/universum-studios/android/universum.studios.android%3Acrypto/images/download.svg)](https://bintray.com/universum-studios/android/universum.studios.android%3Acrypto/_latestVersion)
