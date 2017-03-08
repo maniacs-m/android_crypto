@@ -13,8 +13,8 @@ LIBRARY_JAVADOC_FILE_NAME="${LIBRARY_ARTIFACT_NAME}-${LIBRARY_VERSION}-javadoc.j
 LIBRARY_DIR_TESTS=../library/build/reports/androidTests/connected/
 LIBRARY_DIR_COVERAGE=../library/build/reports/coverage/debug/
 WEBSITE_FILES_VERSION=0.x
-WEBSITE_DIR_DOCS=docs/
-WEBSITE_DIR_DOCS_VERSIONED=$WEBSITE_DIR_DOCS$WEBSITE_FILES_VERSION/
+WEBSITE_DIR_DOC=doc/
+WEBSITE_DIR_DOC_VERSIONED=$WEBSITE_DIR_DOC$WEBSITE_FILES_VERSION/
 WEBSITE_DIR_TESTS=tests/
 WEBSITE_DIR_TESTS_VERSIONED=$WEBSITE_DIR_TESTS$WEBSITE_FILES_VERSION/
 WEBSITE_DIR_COVERAGE=coverage/
@@ -33,7 +33,7 @@ cd $TEMP_DIR
 git checkout -t origin/gh-pages
 
 # Delete all files for the current version.
-rm -rf $WEBSITE_DIR_DOCS_VERSIONED
+rm -rf $WEBSITE_DIR_DOC_VERSIONED
 rm -rf $WEBSITE_DIR_TESTS_VERSIONED
 rm -rf $WEBSITE_DIR_COVERAGE_VERSIONED
 
@@ -41,10 +41,10 @@ rm -rf $WEBSITE_DIR_COVERAGE_VERSIONED
 # from the primary repository.
 cp -R ../website/. .
 # Documentation:
-mkdir -p $WEBSITE_DIR_DOCS_VERSIONED
-cp $LIBRARY_DIR_ARTIFACTS$LIBRARY_JAVADOC_FILE_NAME $WEBSITE_DIR_DOCS_VERSIONED$LIBRARY_JAVADOC_FILE_NAME
-unzip $WEBSITE_DIR_DOCS_VERSIONED$LIBRARY_JAVADOC_FILE_NAME -d $WEBSITE_DIR_DOCS_VERSIONED
-rm $WEBSITE_DIR_DOCS_VERSIONED$LIBRARY_JAVADOC_FILE_NAME
+mkdir -p $WEBSITE_DIR_DOC_VERSIONED
+cp $LIBRARY_DIR_ARTIFACTS$LIBRARY_JAVADOC_FILE_NAME $WEBSITE_DIR_DOC_VERSIONED$LIBRARY_JAVADOC_FILE_NAME
+unzip $WEBSITE_DIR_DOC_VERSIONED$LIBRARY_JAVADOC_FILE_NAME -d $WEBSITE_DIR_DOC_VERSIONED
+rm $WEBSITE_DIR_DOC_VERSIONED$LIBRARY_JAVADOC_FILE_NAME
 # Tests reports:
 mkdir -p $WEBSITE_DIR_TESTS_VERSIONED
 cp -R $LIBRARY_DIR_TESTS. $WEBSITE_DIR_TESTS_VERSIONED
@@ -52,13 +52,16 @@ cp -R $LIBRARY_DIR_TESTS. $WEBSITE_DIR_TESTS_VERSIONED
 mkdir -p $WEBSITE_DIR_COVERAGE_VERSIONED
 cp -R $LIBRARY_DIR_COVERAGE. $WEBSITE_DIR_COVERAGE_VERSIONED
 
-# Stage all files in git and create a commit.
-git add .
-git add -u
-git commit -m "Website at $(date)."
+# Commit and push only if some of the website files have changed.
+if ! git diff-index --quiet HEAD --; then
+    # Stage all files in git and create a commit.
+    git add .
+    git add -u
+    git commit -m "Website at $(date)."
 
-# Push the new website files up to the GitHub.
-git push origin gh-pages
+    # Push the new website files up to the GitHub.
+    git push origin gh-pages
+fi
 
 # Delete temporary directory.
 cd ..
