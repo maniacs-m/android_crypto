@@ -24,6 +24,9 @@
 	<!-- ### APPLICATION ======================================================================= -->
 
 	<string name="app_name">Crypto</string>
+	<string name="app_intro">
+		Welcome to the Crypto sample App.
+	</string>
 
 	<!-- ### NAVIGATION ======================================================================== -->
 
