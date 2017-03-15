@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/Crypto.iml" filepath="$PROJECT_DIR$/Crypto.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-core/library-core.iml" filepath="$PROJECT_DIR$/library-core/library-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library-des/library-des.iml" filepath="$PROJECT_DIR$/library-des/library-des.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-util/library-util.iml" filepath="$PROJECT_DIR$/library-util/library-util.iml" />
       <module fileurl="file://$PROJECT_DIR$/samples/samples.iml" filepath="$PROJECT_DIR$/samples/samples.iml" />
     </modules>
