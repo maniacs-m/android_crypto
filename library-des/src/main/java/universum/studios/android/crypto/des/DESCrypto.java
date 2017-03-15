@@ -16,45 +16,66 @@
  * See the License for the specific language governing permissions and limitations under the License.
  * =================================================================================================
  */
-package universum.studios.android.crypto;
+package universum.studios.android.crypto.des;
 
 import android.support.annotation.NonNull;
 
+import universum.studios.android.crypto.BaseCrypto;
+import universum.studios.android.crypto.Crypto;
+
 /**
+ * todo:
+ *
  * @author Martin Albedinsky
  */
-public abstract class Cryptography {
+public final class DESCrypto extends BaseCrypto {
 
 	/**
 	 * Constants ===================================================================================
 	 */
 
 	/**
-	 * Name of the default charset used for cryptographic operations (encryption, decryption) when
-	 * obtaining {@link Byte byte[]} data form a {@link String} value via {@link String#getBytes(String)}.
+	 * Log TAG.
 	 */
-	public static final String CHARSET_NAME = "UTF-8";
+	// private static final String TAG = "DESCrypto";
 
 	/**
 	 * Interface ===================================================================================
 	 */
 
 	/**
-	 * todo:
-	 *
-	 * @author Martin Albedinsky
+	 * Static members ==============================================================================
 	 */
-	public interface Factory extends Crypto.Factory, Encrypto.Factory, Decrypto.Factory {
-	}
+
+	/**
+	 * todo:
+	 */
+	public static final Crypto.Factory FACTORY = new Factory() {
+
+		/**
+		 */
+		@NonNull
+		@Override
+		public Crypto createCrypto() {
+			return new Builder().build();
+		}
+	};
+
+	/**
+	 * Members =====================================================================================
+	 */
 
 	/**
 	 * Constructors ================================================================================
 	 */
 
 	/**
+	 * todo:
+	 *
+	 * @param builder
 	 */
-	protected Cryptography() {
-		// Creation of instances of this class is not publicly allowed.
+	private DESCrypto(@NonNull Builder builder) {
+		super(builder);
 	}
 
 	/**
@@ -62,19 +83,29 @@ public abstract class Cryptography {
 	 */
 
 	/**
-	 * todo:
-	 *
-	 * @param algorithmName
-	 * @param mode
-	 * @param padding
-	 * @return
-	 */
-	@NonNull
-	public static String cipherTransformation(@NonNull String algorithmName, @NonNull String mode, @NonNull String padding) {
-		return algorithmName + "/" + mode + "/" + padding;
-	}
-
-	/**
 	 * Inner classes ===============================================================================
 	 */
+
+	/**
+	 * todo:
+	 *
+	 * @author Martin Albedinsky
+	 */
+	public static final class Builder extends BaseCrypto.BaseBuilder {
+
+		/**
+		 * todo:
+		 */
+		public Builder() {
+			super(DESEncrypto.FACTORY.createEncrypto(), DESDecrypto.FACTORY.createDecrypto());
+		}
+
+		/**
+		 */
+		@NonNull
+		@Override
+		public Crypto build() {
+			return new DESCrypto(this);
+		}
+	}
 }

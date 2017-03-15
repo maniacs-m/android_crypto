@@ -18,6 +18,8 @@
  */
 package universum.studios.android.crypto;
 
+import android.support.annotation.NonNull;
+
 /**
  * Crypto defines an interface for implementations that may be used to provide <b>two-side</b>
  * cryptographic operations: <b>encryption</b> and <b>decryption</b> of a desired data.
@@ -28,4 +30,37 @@ package universum.studios.android.crypto;
  * @see Decrypto
  */
 public interface Crypto extends Decrypto, Encrypto {
+
+	/**
+	 * todo:
+	 *
+	 * @author Martin Albedinsky
+	 */
+	interface Factory {
+
+		/**
+		 * todo:
+		 *
+		 * @return
+		 */
+		@NonNull
+		Crypto createCrypto();
+	}
+
+	/**
+	 * todo:
+	 *
+	 * @param <C>
+	 * @author Martin Albedinsky
+	 */
+	interface Builder {
+
+		/**
+		 * todo:
+		 *
+		 * @return
+		 */
+		@NonNull
+		Crypto build();
+	}
 }

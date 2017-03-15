@@ -30,6 +30,38 @@ import android.support.annotation.NonNull;
 public interface Decrypto {
 
 	/**
+	 * todo:
+	 *
+	 * @author Martin Albedinsky
+	 */
+	interface Factory {
+
+		/**
+		 * todo:
+		 *
+		 * @return
+		 */
+		@NonNull
+		Decrypto createDecrypto();
+	}
+
+	/**
+	 * todo:
+	 *
+	 * @author Martin Albedinsky
+	 */
+	interface Builder {
+
+		/**
+		 * todo:
+		 *
+		 * @return
+		 */
+		@NonNull
+		Decrypto build();
+	}
+
+	/**
 	 * Performs decryption operation for the specified <var>data</var>.
 	 *
 	 * @param data The data to be decrypted.

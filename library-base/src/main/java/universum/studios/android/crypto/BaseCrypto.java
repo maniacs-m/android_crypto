@@ -1,6 +1,6 @@
 /*
  * =================================================================================================
- *                             Copyright (C) 2017 Universum Studios
+ *                             Copyright (C) 2017 Martin Albedinsky
  * =================================================================================================
  *         Licensed under the Apache License, Version 2.0 or later (further "License" only).
  * -------------------------------------------------------------------------------------------------
@@ -21,40 +21,55 @@ package universum.studios.android.crypto;
 import android.support.annotation.NonNull;
 
 /**
+ * todo:
+ *
  * @author Martin Albedinsky
  */
-public abstract class Cryptography {
+public abstract class BaseCrypto implements Crypto {
 
 	/**
 	 * Constants ===================================================================================
 	 */
 
 	/**
-	 * Name of the default charset used for cryptographic operations (encryption, decryption) when
-	 * obtaining {@link Byte byte[]} data form a {@link String} value via {@link String#getBytes(String)}.
+	 * Log TAG.
 	 */
-	public static final String CHARSET_NAME = "UTF-8";
+	// private static final String TAG = "BaseCrypto";
 
 	/**
 	 * Interface ===================================================================================
 	 */
 
 	/**
-	 * todo:
-	 *
-	 * @author Martin Albedinsky
+	 * Static members ==============================================================================
 	 */
-	public interface Factory extends Crypto.Factory, Encrypto.Factory, Decrypto.Factory {
-	}
+
+	/**
+	 * Members =====================================================================================
+	 */
+
+	/**
+	 * todo:
+	 */
+	private final Encrypto mEncrypto;
+
+	/**
+	 * todo:
+	 */
+	private final Decrypto mDecrypto;
 
 	/**
 	 * Constructors ================================================================================
 	 */
 
 	/**
+	 * todo:
+	 *
+	 * @param builder
 	 */
-	protected Cryptography() {
-		// Creation of instances of this class is not publicly allowed.
+	protected BaseCrypto(@NonNull BaseBuilder builder) {
+		this.mEncrypto = builder.encrypto;
+		this.mDecrypto = builder.decrypto;
 	}
 
 	/**
@@ -62,19 +77,51 @@ public abstract class Cryptography {
 	 */
 
 	/**
-	 * todo:
-	 *
-	 * @param algorithmName
-	 * @param mode
-	 * @param padding
-	 * @return
 	 */
 	@NonNull
-	public static String cipherTransformation(@NonNull String algorithmName, @NonNull String mode, @NonNull String padding) {
-		return algorithmName + "/" + mode + "/" + padding;
+	@Override
+	public byte[] encrypt(@NonNull byte[] data) throws CryptographyException {
+		return mEncrypto.encrypt(data);
+	}
+
+	/**
+	 */
+	@NonNull
+	@Override
+	public byte[] decrypt(@NonNull byte[] data) throws CryptographyException {
+		return mDecrypto.decrypt(data);
 	}
 
 	/**
 	 * Inner classes ===============================================================================
 	 */
+
+	/**
+	 * todo:
+	 *
+	 * @author Martin Albedinsky
+	 */
+	public static abstract class BaseBuilder implements Crypto.Builder {
+
+		/**
+		 * todo:
+		 */
+		protected Encrypto encrypto;
+
+		/**
+		 * todo:
+		 */
+		protected Decrypto decrypto;
+
+		/**
+		 * todo:
+		 *
+		 * @param encrypto
+		 * @param decrypto
+		 */
+		protected BaseBuilder(@NonNull Encrypto encrypto, @NonNull Decrypto decrypto) {
+			this.encrypto = encrypto;
+			this.decrypto = decrypto;
+		}
+	}
 }

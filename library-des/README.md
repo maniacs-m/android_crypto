@@ -1,4 +1,4 @@
-Crypto-Core
+Crypto-Des
 ===============
 
 .. 
@@ -8,12 +8,12 @@ Crypto-Core
 
 ### Gradle ###
 
-    compile "universum.studios.android:crypto-core:${DESIRED_VERSION}@aar"
+    compile "universum.studios.android:crypto-des:${DESIRED_VERSION}@aar"
 
 ## Components ##
 
 Below are listed some of **primary components** that are available in this module:
 
-- [Crypto](https://github.com/universum-studios/android_crypto/blob/master/library-core/src/main/java/universum/studios/android/crypto/Crypto.java)
-- [Encrypto](https://github.com/universum-studios/android_crypto/blob/master/library-core/src/main/java/universum/studios/android/crypto/Encrypto.java)
-- [Decrypto](https://github.com/universum-studios/android_crypto/blob/master/library-core/src/main/java/universum/studios/android/crypto/Decrypto.java)
+- [DESCrypto](https://github.com/universum-studios/android_crypto/blob/master/library-des/src/main/java/universum/studios/android/crypto/des/DESCrypto.java)
+- [DESEncrypto](https://github.com/universum-studios/android_crypto/blob/master/library-des/src/main/java/universum/studios/android/crypto/des/DESEncrypto.java)
+- [DESDecrypto](https://github.com/universum-studios/android_crypto/blob/master/library-des/src/main/java/universum/studios/android/crypto/des/DESDecrypto.java)
