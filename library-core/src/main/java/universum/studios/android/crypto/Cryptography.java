@@ -70,6 +70,7 @@ public abstract class Cryptography {
 	 * @return
 	 */
 	@NonNull
+	// fixme: move this rather to some CipherUtils
 	public static String cipherTransformation(@NonNull String algorithmName, @NonNull String mode, @NonNull String padding) {
 		return algorithmName + "/" + mode + "/" + padding;
 	}
