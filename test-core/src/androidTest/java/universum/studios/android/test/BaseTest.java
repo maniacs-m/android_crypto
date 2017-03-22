@@ -50,7 +50,7 @@ public abstract class BaseTest {
 	 */
 	@Before
 	@CallSuper
-	public void beforeTest() {
+	public void beforeTest() throws Exception {
 		// Inheritance hierarchies may for example acquire here resources needed for each test.
 		this.mContext = InstrumentationRegistry.getTargetContext();
 	}
@@ -60,7 +60,7 @@ public abstract class BaseTest {
 	 */
 	@After
 	@CallSuper
-	public void afterTest() {
+	public void afterTest() throws Exception {
 		// Inheritance hierarchies may for example release here resources acquired in beforeTest() call.
 		this.mContext = null;
 	}
