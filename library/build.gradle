@@ -50,6 +50,7 @@ android {
         ]
         debug.java.srcDirs = release.java.srcDirs
         androidTest.java.srcDirs = [
+                '../library/src/androidTest/java',
                 '../library-core/src/androidTest/java',
                 '../library-base/src/androidTest/java',
                 '../library-des/src/androidTest/java',
