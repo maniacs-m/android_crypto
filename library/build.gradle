@@ -47,6 +47,11 @@ android {
                 '../library-util/src/main/java'
         ]
         debug.java.srcDirs = release.java.srcDirs
+        androidTest.java.srcDirs = [
+                '../library/src/androidTest/java',
+                '../library-core/src/androidTest/java',
+                '../library-util/src/androidTest/java'
+        ]
     }
 
     compileOptions {
